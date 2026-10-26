@@ -8,12 +8,6 @@ const API_BASE_URL = configuredApiBaseUrl
     : "";
 
 async function request(path, options = {}) {
-  if (!API_BASE_URL) {
-    throw new Error(
-      "VITE_API_BASE_URL must be configured for the production frontend.",
-    );
-  }
-
   const response = await fetch(`${API_BASE_URL}/appointments${path}`, {
     headers: {
       "Content-Type": "application/json",

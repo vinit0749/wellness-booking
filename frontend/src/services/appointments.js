@@ -5,7 +5,7 @@ const API_BASE_URL = configuredApiBaseUrl
   ? `${configuredApiBaseUrl.replace(/\/api$/i, "")}/api`
   : import.meta.env.DEV
     ? "http://localhost:5000/api"
-    : "";
+    : "/api";
 
 async function request(path, options = {}) {
   const response = await fetch(`${API_BASE_URL}/appointments${path}`, {
